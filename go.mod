@@ -1,4 +1,4 @@
-module go-kafka-redis-master
+module github.com/rahulNandan/go-kafka-redis
 
 go 1.12
 
