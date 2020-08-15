@@ -1,0 +1,11 @@
+FROM golang
+
+COPY / .
+
+ENV GOPATH=$PWD
+
+RUN ./start.sh
+
+ENTRYPOINT /go/bin/main
+
+EXPOSE 8080

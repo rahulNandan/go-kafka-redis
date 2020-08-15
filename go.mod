@@ -1,4 +1,4 @@
-module gitlab.com/melwyn95/go-redis-kafka-demo
+module go-kafka-redis-master
 
 go 1.12
 
