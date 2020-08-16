@@ -18,4 +18,4 @@ go mod download
 
 go install ./...
 
-#. http-server
+/bin/http-server
