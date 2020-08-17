@@ -5,15 +5,17 @@ services:
     ports:
       - "6379:6379"
   zookeeper:
-    context: .
-    dockerfile: zookeeper-Dockerfile
+    build:
+      context: .
+      dockerfile: zookeeper-Dockerfile
     ports:
       - "2181:2181"
   kafka:
     depends_on: 
       - zookeeper
-    context: .
-    dockerfile: kafka-Dockerfile
+    build:
+      context: .
+      dockerfile: kafka-Dockerfile
     ports:
       - "9092:9092"
   http-server:
