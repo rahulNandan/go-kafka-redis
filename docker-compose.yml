@@ -12,7 +12,7 @@ services:
       - "2181:2181"
   kafka:
     depends_on: 
-      - zookeeper
+      - zookeeper-server
     build:
       context: .
       dockerfile: kafka-Dockerfile
