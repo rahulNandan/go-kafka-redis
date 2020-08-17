@@ -1,9 +1,5 @@
 version: '3'
 services:
-  http-server:
-    build: .
-    ports:
-      - "8080:8080"
   redis:
     image: "redis:alpine"
     ports:
@@ -16,4 +12,7 @@ services:
     build: ./kafka-Dockerfile
     ports:
       - "9092:9092"
-    
+  http-server:
+    build: .
+    ports:
+      - "8080:8080"
