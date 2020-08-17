@@ -4,16 +4,12 @@ services:
     image: "redis:alpine"
     ports:
       - "6379:6379"
-    networks:
-      - my-app
   zookeeper-server:
     build:
       context: .
       dockerfile: zookeeper-Dockerfile
     ports:
       - "2181:2181"
-    networks:
-      - my-app
   kafka:
     depends_on: 
       - zookeeper-server
@@ -22,8 +18,6 @@ services:
       dockerfile: kafka-Dockerfile
     ports:
       - "9092:9092"
-    networks:
-      - my-app
   http-server:
     depends_on: 
       - redis
@@ -33,5 +27,3 @@ services:
       dockerfile: server-Dockerfile
     ports:
       - "8080:8080"
-    networks:
-      - my-app
