@@ -3,3 +3,7 @@ FROM   bitnami/kafka
 ENV ALLOW_PLAINTEXT_LISTENER=yes
 
 ENV KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper:2181
+
+WORKDIR /opt/bitnami/kafka/bin/
+
+RUN ./kafka-topics.sh --create --zookeeper zookeeper:2181 --topic number --partitions 1 --replication-factor 1

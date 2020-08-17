@@ -22,6 +22,8 @@ services:
     depends_on: 
       - redis
       - kafka
-    build: .
+    build:
+      context: .
+      dockerfile: server-Dockerfile
     ports:
       - "8080:8080"
